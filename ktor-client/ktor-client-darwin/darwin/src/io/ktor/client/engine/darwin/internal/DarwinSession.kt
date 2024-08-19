@@ -30,7 +30,7 @@ internal class DarwinSession(
             val response = delegate.read(task, callContext)
             task to response
         } else {
-            val task = session.dataTaskWithRequest(nativeRequest)
+            val task = session.downloadTaskWithRequest(nativeRequest)
             val response = delegate.read(request, callContext, task)
             task to response
         }

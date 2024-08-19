@@ -26,7 +26,8 @@ internal class DarwinClientEngine(override val config: DarwinClientEngineConfig)
 
     override val supportedCapabilities = setOf(HttpTimeoutCapability, WebSocketCapability, SSECapability)
 
-    private val session = DarwinSession(config, requestQueue)
+    private val session =
+        DarwinSession(config, requestQueue)
 
     override suspend fun execute(data: HttpRequestData): HttpResponseData {
         val callContext = callContext()
